@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Macrozone</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="stylesheet.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<div id="logo">Macro<span id="logo-s">zone</span></div>
+		<nav>
+			<ul class="nav__links">
+				<li><a href="index.html">Home</a></li>
+				<div class="dropdown">
+                    <li><a class="dropbtn">PC Components</a></li>
+					<div class="dropdown-content">
+						<a href="cpus.html">CPUs / Processors</a>
+						<a href="mobos.html">Motherboards</a>
+						<a href="gpus.html">Graphics Processing Units</a>
+						<a href="psus.html">Power Supplies</a>
+						<a href="ram.html">Memory</a>
+						<a href="storage.html">Storage</a>
+					</div>
+				</div>
+				<li><a href="peripherals.html">Peripherals</a></li>
+				<li><a href="about.html">About</a></li>
+			</ul>
+		</nav>
+		<a class="cta" href="contact.html">Contact</a>
+	</header>
+	
+	<div class="slideshow">
+		
+		<div class="myslideshow" style="display: block;">
+			<div class="txt">
+				<h1> Macro<font color="white">zone</font></h1>
+				<p>Build your Rig.<br>Build your Future.</p>
+			</div>
+			<img src="banner/forbanner2.jpg" style="width: 100%; height: 100%;">
+		</div>
+		
+		<div class="myslideshow">
+			<div class="txt">
+				<h1>Upgrade your Rig</h1>
+				<p>We have latest releases!<br>Transform your Beast into a Monster.</p>
+			</div>
+			<img src="banner/forbanner1.jpg" style="width: 100%; height: 100%;">
+		</div>
+		
+		<div class="myslideshow">
+			<div class="txt">
+				<h1>Contact Us</h1>
+				<p>If you have any concerns, <br>you can easily reach us by Contacting us.</p>
+			</div>
+			<img src="banner/forbanner3.jpg" style="width: 100%; height: 100%;">
+		</div>
+		
+		<div class="myslideshow">
+			<div class="txt">
+				<h1>About Us</h1>
+				<p>You can know more about us<br>by navigating to "About Us".</p>
+			</div>
+			<a class="banner"><img src="banner/forbanner4.png" style="width: 100%; height: 100%;"></a>
+		</div>
+		
+		<div class="myslideshow">
+			<div class="txt">
+				<h1>Buy Now!</h1>
+				<p>Add to Cart now,<br>pay later! Its that easy!</p>
+			</div>
+			<img src="banner/forbanner5.jpeg" style="width: 100%; height: 100%;">
+		</div>
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		
+		<div class="dotsbox" style="text-align: center;">
+			<span class="dot" onclick="currentSlide(1)"></span>
+			<span class="dot" onclick="currentSlide(2)"></span>
+			<span class="dot" onclick="currentSlide(3)"></span>
+			<span class="dot" onclick="currentSlide(4)"></span>
+			<span class="dot" onclick="currentSlide(5)"></span>		
+		</div>
+		
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>

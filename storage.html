@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Macrozone</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="stylesheet.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+</head>
+<body bgcolor="#00a7ff">
+	<header>
+		<div id="logo">Macro<span id="logo-s">zone</span></div>
+		<nav>
+			<ul class="nav__links">
+				<li><a href="index.html">Home</a></li>
+				<div class="dropdown">
+                    <li><a class="dropbtn">PC Components</a></li>
+					<div class="dropdown-content">
+						<a href="cpus.html">CPUs / Processors</a>
+						<a href="mobos.html">Motherboards</a>
+						<a href="gpus.html">Graphics Processing Units</a>
+						<a href="psus.html">Power Supplies</a>
+						<a href="ram.html">Memory</a>
+						<a href="storage.html">Storage</a>
+					</div>
+				</div>
+				<li><a href="peripherals.html">Peripherals</a></li>
+				<li><a href="about.html">About</a></li>
+			</ul>
+		</nav>
+		<a class="cta" href="contact.html">Contact</a>
+		<style>
+			@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+			
+			*{
+			margin: 0;
+			padding: 0;
+			color: #454545;
+			}
+			h1{
+			width: 3%;
+			position: relative;
+			top: 40px;
+			left: 90%;
+			cursor: pointer;
+			}
+			h1:before{
+			content: attr(data-count);
+			color: white;
+			position: absolute;
+			right: 16px;
+			font-size: 15px;
+			text-align: center;
+			top: -12px;
+			width: 20px;
+			height: 20px;
+			background: red;
+			border-radius: 50%;
+			opacity: 0;
+			}
+			h1.zero:before{
+			opacity: 1;
+			}
+			.title{
+			line-height: 50px;
+			margin-right: auto;
+			cursor: pointer;
+			font-family: "Montserrat", sans-serif;
+			font-size: 50px;
+			font-weight: bold;
+			position: center;
+			}
+			h2{
+			color: white;
+			cursor: pointer;
+			font-family: "Montserrat", sans-serif;
+			}
+			section{
+			margin: 100px auto;
+			width: 90%;
+			height: 400px;
+			display: flex;
+			justify-content: space-around;
+			}
+			section div{
+			width: 17%;
+			height: 95%;
+			background:#136e9e;
+			padding: 1%;
+			position: relative;
+			}
+			img{
+			width: 250px;
+			height: 206px;
+			}
+			
+			p{
+			margin: 5px;
+			font-family: "Montserrat", sans-serif;
+			color: white;
+			}
+			h6{
+		    width: 50px;
+		    padding: 5px;
+		    margin: 10px;
+		    font-size: 15px;
+			font-family: "Montserrat", sans-serif;
+			color: white;
+			}
+			button{
+			padding: 5px;
+		    background: red;
+		    border: none;
+		    outline: none;
+		    font-weight: bold;
+		    color: #fafafa;
+		    cursor: pointer;
+			}
+			section div span{
+			position: absolute;
+		    top: 14px;
+		    left: 13px;
+		    background: red;
+		    width: 300px;
+		    height: 186px;
+		    display: none;
+			}
+			section div span img{
+			width: 100%;
+			height: 100%;
+			}
+			section div:nth-child(1)>span.active{
+			animation: first 0.5s ease-in;
+			z-index: 2;
+			display: block;
+			
+			}
+			section div:nth-child(2)>span.active{
+			animation: second 0.5s ease-in;
+			z-index: 2;
+			display: block;
+			
+			}
+			section div:nth-child(3)>span.active{
+			animation: third 0.5s ease-in;
+			z-index: 2;
+			display: block;
+			
+			}
+			section div:nth-child(4)>span.active{
+			animation: four 0.5s ease-in;
+			z-index: 2;
+			display: block;
+			
+			}
+			@keyframes first{
+			to{
+			width: 30px;
+			height: 20px;
+			left: 1290px;
+			top: -70px;
+			}
+			}
+			@keyframes second{
+			to{
+			width: 30px;
+			height: 20px;
+			left: 948px;
+			top: -70px;
+			}
+			}
+			@keyframes third{
+			to{
+			width: 30px;
+			height: 20px;
+			left: 606px;
+			top: -70px;
+			}
+			}
+			@keyframes four{
+			to{
+			width: 30px;
+			height: 20px;
+			left: 265px;
+			top: -70px;
+			}
+			}
+			.select{
+			width: 60%;
+			height: 580px;
+			padding: 5%;
+			background: #222;
+			position: absolute;
+			top: -1000px;
+			left: 20%;
+			transition: 0.5s;
+			overflow-y: auto;
+			margin: auto;
+			}
+			.select.display{
+			top: 10px;
+			}
+			.select div{
+			width: 100%;
+			height: 200px;
+			display: flex;
+			padding: 5px;
+			border: 1px solid white;
+			position: relative;
+			margin: 5px auto;
+			}
+			.select div img{
+			width: 300px;
+			height: 100%;
+			}
+			.select div p{
+			padding: 35px;
+			color: white;
+			}
+			.select div h6,
+			.select div button{
+			position: absolute;
+			left: 45%;
+			top: 50%;
+			color: white;
+			}
+			.select div button{
+			left: 60%;
+			top: 55%;
+			}
+			.select div span{
+			display: none;
+			}
+			
+		</style>
+	</header>
+	<h1><i class=" fa fa-shopping-cart"></i></h1>
+	<div class="title"><center>Storages</center></div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<Center><h2>Hard Drives</h2></center>
+	<section>
+		<div class="item">
+			<img src="products/hdd1.jpg">
+			<p>LSeagate BarraCuda 4TB 5400RPM SATA III 6Gb/s 3.5" Internal Hard Drive</p>
+			<h6>₱3,779.61</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/hdd2.jpg">
+			<p>Seagate BarraCuda 8TB 5400RPM SATA III 6Gb/s 3.5" OEM Internal Hard Drive</p>
+			<h6>₱7,559.72</h6>
+			<span></span>
+			<button>Add-cart</button>
+			
+		</div>
+		<div class="item">
+			<img src="products/hdd3.jpg">
+			<p>Seagate Skyhawk AI 8TB 7200RPM SATA III 6Gb/s 3.5" Surveillance Hard Drive</p>
+			<h6>₱11,591.84</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/hdd4.jpg">
+			<p>Seagate BarraCuda 1TB 5400RPM SATA III 6Gb/s 2.5" Internal Hard Drive</p>
+			<h6>₱2,620.37</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<section>
+		<div class="item">
+			<img src="products/hdd5.jpg">
+			<p>Seagate IronWolf 6TB 5400RPM SATA III 6Gb/s 3.5" Internal NAS Hard Drive</p>
+			<h6>₱7,055.71</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/hdd6.jpg">
+			<p>Seagate SkyHawk Surveillance 6TB 7200RPM SATA III 6Gb/s 3.5" Hard Drive</p>
+			<h6>₱8,063.74</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/hdd7.jpg">
+			<p>Toshiba DTO1ACA100 1TB 7200RPM SATA 6Gb/s 3.5" Internal Hard Drive</p>
+			<h6>₱1,763.55</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/hdd8.jpg">
+			<p>Seagate IronWolf 4TB 5900RPM SATA III 6Gb/s 3.5" NAS Internal Hard Drive</p>
+			<h6>₱4,535.63</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<section>
+		<div class="item">
+			<img src="products/hdd9.jpg">
+			<p>Seagate IronWolf 10TB 7200RPM SATA III 6Gb/s 3.5" Internal NAS Hard Drive</p>
+			<h6>₱14,111.92</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/hdd10.jpg">
+			<p>Seagate BarraCuda 1TB 7200RPM SATA III 6Gb/s 3.5" OEM Internal Hard Drive</p>
+			<h6>₱2,519.57</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/hdd11.jpg">
+			<p>Seagate BarraCuda 6TB 5400RPM SATA III 6Gb/s 3.5" OEM Internal Hard Drive</p>
+			<h6>₱6,551.69</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/hdd12.jpg">
+			<p>Toshiba L200 1TB 5400RPM SATA III 6Gb/s 2.5" Internal Hard Drive</p>
+			<h6>₱2,519.57</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<section>
+		<div class="item">
+			<img src="products/hdd13.jpg">
+			<p>Seagate Barracuda 2TB 5400RPM SATA III 6Gb/s 2.5" Internal Hard Drive</p>
+			<h6>₱3,830.01</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/hdd14.jpg">
+			<p>Toshiba N300 14TB 7200RPM SATA III 6Gb/s 3.5" Internal NAS Hard Drive</p>
+			<h6>₱27,720.32</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/hdd15.jpg">
+			<p>WD Mainstream Blue 2TB 5400RPM SATA III 6Gb/s 2.5" Internal Hard Drive</p>
+			<h6>₱3,830.01</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/hdd16.jpg">
+			<p>Toshiba N300 4TB 7200RPM SATA III 6Gb/s 3.5" Internal NAS Hard Drive</p>
+			<h6>₱6,047.68</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<section>
+		<div class="item">
+			<img src="products/hdd17.jpg">
+			<p>WD Red Pro 8TB 7200RPM SATA III 6Gb/s 3.5" Internal NAS Hard Drive</p>
+			<h6>₱13,607.90</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/hdd18.jpg">
+			<p>WD Blue Mainstream 500GB 5400RPM SATA II 3Gb/s 2.5" Internal Hard Drive</p>
+			<h6>₱2,519.57</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/hdd19.jpg">
+			<p>Toshiba N300 10TB 7200RPM SATA III 6Gb/s 3.5" Internal NAS Hard Drive</p>
+			<h6>₱15,119.95</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/hdd20.jpg">
+			<p>WD Blue Mainstream 1TB 5400RPM SATA III 6Gb/s 2.5" Internal Hard Drive</p>
+			<h6>₱2,771.58</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<Center><h2>Solid State Drives</h2></center>
+	<section>
+		<div class="item">
+			<img src="products/ssd1.jpg">
+			<p>Samsung 980 SSD 1TB M.2 NVMe Interface PCIe 3.0 x4 Internal Solid State Drive</p>
+			<h6>₱5,039.65</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/ssd2.jpg">
+			<p>Samsung 980 Pro SSD 1TB M.2 NVMe Interface PCIe Gen 4x4 Internal Solid State</p>
+			<h6>₱8,567.75</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/ssd3.jpg">
+			<p>Samsung 980 Pro SSD 2TB M.2 NVMe Interface PCIe Gen 4x4 Internal Solid State</p>
+			<h6>₱16,631.99</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/ssd4.jpg">
+			<p>Samsung 870 EVO 1TB SSD 3-bit SATA III 6Gb/s 2.5" Internal Solid State Drive</p>
+			<h6>₱6,047.68</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<section>
+	<div class="item">
+		<img src="products/ssd5.jpg">
+		<p>Samsung 970 EVO Plus SSD 2TB M.2 NVMe Interface PCIe 3.0 x4 Internal Solid State</p>
+		<h6>₱11,591.84</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/ssd6.jpg">
+		<p>Samsung 870 QVO 2TB SSD 4-bit SATA III 6Gb/s 2.5" Internal Solid State Drive</p>
+		<h6>₱9,071.77</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/ssd7.jpg">
+		<p>512GB SSD 3D TLC NAND SATA 3.0 6 GBps 2.5 Inch 7mm Solid State Drive</p>
+		<h6>₱2,368.37</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/ssd8.jpg">
+		<p>Samsung 970 EVO Plus SSD 1TB M.2 NVMe Interface PCIe 3.0 x4 Solid State</p>
+		<h6>₱6,551.69</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+</section>
+<section>
+	<div class="item">
+		<img src="products/ssd9.jpg">
+		<p>Inland Professional 1TB SSD SATA 3.0 6 GBps 2.5 Inch 7mm Internal Solid State</p>
+		<h6>₱4,384.43</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/ssd10.jpg">
+		<p>256GB SSD 3D TLC NAND SATA 3.0 6 GBps 2.5 Inch 7mm Solid State Drive</p>
+		<h6>₱1,511.54</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/ssd11.jpg">
+		<p>Intel 660p 1TB SSD M.2 2280 PCIe NVMe 3.0 x4 Internal Solid State Drive</p>
+		<h6>₱4,283.62</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/ssd12.jpg">
+		<p>870 QVO 4TB SSD 4-bit SATA III 6Gb/s 2.5" Internal Solid State Drive</p>
+		<h6>₱17,640.022</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+</section>
+<section>
+	<div class="item">
+		<img src="products/ssd13.jpg">
+		<p>Samsung 980 SSD 500GB M.2 NVMe Interface PCIe 3.0 x4 Solid State</p>
+		<h6>₱3,275.59</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/ssd14.1.jpg">
+		<p>870 EVO 500GB SSD 3-bit SATA III 6Gb/s 2.5" Internal Solid State Drive</p>
+		<h6>₱3,023.59</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/ssd14.jpg">
+		<p>BX500 1TB SSD 3D NAND SATA III 6Gb/s 2.5" Internal Solid State Drive</p>
+		<h6>₱4,535.63</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/ssd15.jpg">
+		<p>Inland 1TB SSD Gen 4.0 PCIe NVMe 4 x4 M.2 2280 Internal Solid State Drive</p>
+		<h6>₱6,047.68</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+</section>
+<section>
+	<div class="item">
+		<img src="products/ssd16.jpg">
+		<p>Crucial MX500 2TB SSD 3D TLC NAND SATA III 6Gb/s 2.5" Solid State Drive</p>
+		<h6>₱7,164.88</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/ssd17.jpg">
+		<p>WD SN850 1TB M.2 NVMe Interface PCIe Gen 4x4 Internal Solid State Drive</p>
+		<h6>₱8,326.80</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/ssd18.jpg">
+		<p>Samsung 870 QVO 1TB SSD 4-bit SATA III 6Gb/s 2.5" Solid State Drive</p>
+		<h6>₱5,551.03</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/ssd19.jpg">
+		<p>Samsung 980 Pro SSD 500GB M.2 NVMe Interface PCIe Gen 4x4 Internal Solid State</p>
+		<h6>₱5,551.03</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+</section>
+<div class="select">
+</body>
+</html>
+<script src="main.js"></script>

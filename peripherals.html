@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Macrozone</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="stylesheet.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+</head>
+<body bgcolor="#00a7ff">
+	<header>
+		<div id="logo">Macro<span id="logo-s">zone</span></div>
+		<nav>
+			<ul class="nav__links">
+				<li><a href="index.html">Home</a></li>
+				<div class="dropdown">
+                    <li><a class="dropbtn">PC Components</a></li>
+					<div class="dropdown-content">
+						<a href="cpus.html">CPUs / Processors</a>
+						<a href="mobos.html">Motherboards</a>
+						<a href="gpus.html">Graphics Processing Units</a>
+						<a href="psus.html">Power Supplies</a>
+						<a href="ram.html">Memory</a>
+						<a href="storage.html">Storage</a>
+					</div>
+				</div>
+				<li><a href="peripherals.html">Peripherals</a></li>
+				<li><a href="about.html">About</a></li>
+			</ul>
+		</nav>
+		<a class="cta" href="contact.html">Contact</a>
+		<style>
+			@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+			
+			*{
+			margin: 0;
+			padding: 0;
+			color: #454545;
+			}
+			h1{
+			width: 3%;
+			position: relative;
+			top: 40px;
+			left: 90%;
+			cursor: pointer;
+			}
+			h1:before{
+			content: attr(data-count);
+			color: white;
+			position: absolute;
+			right: 16px;
+			font-size: 15px;
+			text-align: center;
+			top: -12px;
+			width: 20px;
+			height: 20px;
+			background: red;
+			border-radius: 50%;
+			opacity: 0;
+			}
+			h1.zero:before{
+			opacity: 1;
+			}
+			.title{
+			line-height: 50px;
+			margin-right: auto;
+			cursor: pointer;
+			font-family: "Montserrat", sans-serif;
+			font-size: 50px;
+			font-weight: bold;
+			position: center;
+			}
+			h2{
+			color: white;
+			cursor: pointer;
+			font-family: "Montserrat", sans-serif;
+			}
+			section{
+			margin: 100px auto;
+			width: 90%;
+			height: 400px;
+			display: flex;
+			justify-content: space-around;
+			}
+			section div{
+			width: 17%;
+			height: 95%;
+			background:#136e9e;
+			padding: 1%;
+			position: relative;
+			}
+			img{
+			width: 250px;
+			height: 206px;
+			}
+			
+			p{
+			margin: 5px;
+			font-family: "Montserrat", sans-serif;
+			color: white;
+			}
+			h6{
+		    width: 50px;
+		    padding: 5px;
+		    margin: 10px;
+		    font-size: 15px;
+			font-family: "Montserrat", sans-serif;
+			color: white;
+			}
+			button{
+			padding: 5px;
+		    background: red;
+		    border: none;
+		    outline: none;
+		    font-weight: bold;
+		    color: #fafafa;
+		    cursor: pointer;
+			}
+			section div span{
+			position: absolute;
+		    top: 14px;
+		    left: 13px;
+		    background: red;
+		    width: 300px;
+		    height: 186px;
+		    display: none;
+			}
+			section div span img{
+			width: 100%;
+			height: 100%;
+			}
+			section div:nth-child(1)>span.active{
+			animation: first 0.5s ease-in;
+			z-index: 2;
+			display: block;
+			
+			}
+			section div:nth-child(2)>span.active{
+			animation: second 0.5s ease-in;
+			z-index: 2;
+			display: block;
+			
+			}
+			section div:nth-child(3)>span.active{
+			animation: third 0.5s ease-in;
+			z-index: 2;
+			display: block;
+			
+			}
+			section div:nth-child(4)>span.active{
+			animation: four 0.5s ease-in;
+			z-index: 2;
+			display: block;
+			
+			}
+			@keyframes first{
+			to{
+			width: 30px;
+			height: 20px;
+			left: 1290px;
+			top: -70px;
+			}
+			}
+			@keyframes second{
+			to{
+			width: 30px;
+			height: 20px;
+			left: 948px;
+			top: -70px;
+			}
+			}
+			@keyframes third{
+			to{
+			width: 30px;
+			height: 20px;
+			left: 606px;
+			top: -70px;
+			}
+			}
+			@keyframes four{
+			to{
+			width: 30px;
+			height: 20px;
+			left: 265px;
+			top: -70px;
+			}
+			}
+			.select{
+			width: 60%;
+			height: 580px;
+			padding: 5%;
+			background: #222;
+			position: absolute;
+			top: -1000px;
+			left: 20%;
+			transition: 0.5s;
+			overflow-y: auto;
+			margin: auto;
+			}
+			.select.display{
+			top: 10px;
+			}
+			.select div{
+			width: 100%;
+			height: 200px;
+			display: flex;
+			padding: 5px;
+			border: 1px solid white;
+			position: relative;
+			margin: 5px auto;
+			}
+			.select div img{
+			width: 300px;
+			height: 100%;
+			}
+			.select div p{
+			padding: 35px;
+			color: white;
+			}
+			.select div h6,
+			.select div button{
+			position: absolute;
+			left: 45%;
+			top: 50%;
+			color: white;
+			}
+			.select div button{
+			left: 60%;
+			top: 55%;
+			}
+			.select div span{
+			display: none;
+			}
+			
+		</style>
+	</header>
+	
+	<h1><i class=" fa fa-shopping-cart"></i></h1>
+	<div class="title"><center>Peripherals</center></div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<Center><h2>Keyboards</h2></center>
+	<section>
+		<div class="item">
+			<img src="products/kb1.jpg">
+			<p>Logitech MK270 <br>Wireless Keyboard and Mouse</p>
+			<h6>₱1,008.70</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/kb2.jpg">
+			<p>Logitech MK320 Series Wireless Desktop Keyboard and Mouse</p>
+			<h6>₱1,412.39</h6>
+			<span></span>
+			<button>Add-cart</button>
+			
+		</div>
+		<div class="item">
+			<img src="products/kb3.jpg">
+			<p>Redragon Devarajas K556 RGB Mechanical Gaming Keyboard - Brown</p>
+			<h6>₱2,017.91</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/kb4.jpg">
+			<p>Corsair K55 RGB PRO Gaming Keyboard, Backlit RGB LED, Black</p>
+			<h6>₱2,522.52</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<section>
+		<div class="item">
+			<img src="products/kb5.jpg">
+			<p>Razer BlackWidow V3 - Mechanical Gaming Keyboard (Green Switch)</p>
+			<h6>₱7,063.96</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/kb6.jpg">
+			<p>Logitech G G413 Mechanical Gaming Keyboard - Romer-G Tactile</p>
+			<h6>₱3,531.73</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/kb7.jpg">
+			<p>SteelSeries <br>Apex 3 RGB Gaming Keyboard</p>
+			<h6>₱2,522.52</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/kb8.jpg">
+			<p>SteelSeries Apex 5 RGB Gaming Keyboard w/ OLED Display with Palm Rest</p>
+			<h6>₱5,045.54</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<section>
+		<div class="item">
+			<img src="products/kb9.jpg">
+			<p>Razer BlackWidow V3 - Mechanical Gaming Keyboard (Green Switch)</p>
+			<h6>₱7,063.96</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/kb10.jpg">
+			<p>HyperX Alloy Origins Core Tenkeyless Mechanical Gaming Keyboard</p>
+			<h6>₱4,540.94</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/kb11.jpg">
+			<p>Razer Huntsman Mini 60% Optical Gaming Keyboard White - Purple Switch</p>
+			<h6>₱6,054.75</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/kb12.jpg">
+			<p>HyperX HyperX Alloy Elite 2 Mechanical Gaming Keyboard</p>
+			<h6>₱5,953.83</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<section>
+		<div class="item">
+			<img src="products/kb13.jpg">
+			<p>SteelSeries Apex 7 TKL Mechanical Gaming Keyboard - Ghost</p>
+			<h6>₱7,568.56</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/kb14.jpg">
+			<p>Glorious Gaming Race GMMK Tenkeyless RGB Mechanical Gaming Keyboard</p>
+			<h6>₱4,036.33</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/kb15.jpg">
+			<p>Redragon K552 60% RGB Gaming Mechanical Keyboard - Black</p>
+			<h6>₱2,017.91</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/kb16.jpg">
+			<p>Glorious PC Gaming Race Glorious Modular Mechanical Gaming Keyboard</p>
+			<h6>₱6,559.35</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<section>
+		<div class="item">
+			<img src="products/kb17.jpg">
+			<p>SteelSeries Apex Pro RGB Mechanical Gaming Keyboard - OmniPoint</p>
+			<h6>₱10,091.59</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/kb18.jpg">
+			<p>Corsair K63 Compact Illuminated Mechanical Gaming Keyboard</p>
+			<h6>₱4,036.33</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/kb19.jpg">
+			<p>Redragon K585 DITI RGB Mechanical Gaming Keyboard - OUTEMU Blue</p>
+			<h6>₱1,866.53</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/kb20.jpg">
+			<p>Logitech <br>K845 Mechanical Illuminated Keyboard</p>
+			<h6>₱3,027.12</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<section>
+		<div class="item">
+			<img src="products/kb21.jpg">
+			<p>Redragon K512 Shiva RGB Membrane Gaming Keyboard</p>
+			<h6>₱1,513.31</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/kb22.jpg">
+			<p>Razer Razer Pro Type Wireless Mechanical Productivity Keyboard</p>
+			<h6>₱6,912.58</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/kb23.jpg">
+			<p>ASUS ROG Strix Scope Moonlight Mechanical RGB Gaming Keyboard</p>
+			<h6>₱6,054.75</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/kb24.jpg">
+			<p>Redragon K605 Giant Mechanical Gaming Keyboard - Blue Switch</p>
+			<h6>₱8,577.77</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<Center><h2>Mouse</h2></center>
+	<section>
+		<div class="item">
+			<img src="products/mouse1.jpg">
+			<p>Logitech MX Master 3 Advanced Wireless Mouse - Black</p>
+			<h6>₱5,045.54</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/mouse2.jpg">
+			<p>Logitech <br>G G502 HERO Gaming <br>Mouse</p>
+			<h6>₱2,017.91</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/mouse3.jpg">
+			<p>Logitech G PRO X SUPERLIGHT Wireless Gaming Mouse - White</p>
+			<h6>₱7,568.56</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/mouse4.jpg">
+			<p>Glorious PC Gaming Race Model O Wireless Gaming Mouse - Matte White</p>
+			<h6>₱4,540.94</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<section>
+	<div class="item">
+		<img src="products/mouse5.jpg">
+		<p>Logitech G PRO X SUPERLIGHT Wireless Gaming Mouse - Black</p>
+		<h6>₱7,568.56</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/mouse6.jpg">
+		<p>Glorious PC Gaming Race Model O Wireless Gaming Mouse - Matte Black</p>
+		<h6>₱4,540.94</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/mouse7.jpg">
+		<p>Glorious PC Gaming Race Model D Gaming Mouse - Matte Black</p>
+		<h6>₱2,522.52</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/mouse8.jpg">
+		<p>Logitech <br>ERGO M575 Wireless Trackball - Black</p>
+		<h6>₱2,522.52</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+</section>
+<section>
+	<div class="item">
+		<img src="products/mouse9.jpg">
+		<p>Razer <br>DeathAdder V2 Wired Gaming Mouse</p>
+		<h6>₱2,875.74</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/mouse10.jpg">
+		<p>Logitech G G502 LIGHTSPEED Wireless RGB Gaming Mouse - Black</p>
+		<h6>₱6,559.35</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/mouse11.jpg">
+		<p>Razer Basilisk X HyperSpeed Wireless Ergonomic Gaming Mouse</p>
+		<h6>₱2,421.60</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/mouse12.jpg">
+		<p>Glorious PC Gaming Race Model D Gaming Mouse - Matte White</p>
+		<h6>₱2,522.52</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+</section>
+<section>
+	<div class="item">
+		<img src="products/mouse13.jpg">
+		<p>Redragon M801P Sniper Pro RGB Wired/ Wireless Gaming Mouse - Black</p>
+		<h6>₱7,568.56</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/mouse14.1.jpg">
+		<p>Glorious PC Gaming Race Model O Wireless Gaming Mouse - Matte Black</p>
+		<h6>₱2,270.22</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/mouse14.jpg">
+		<p>Corsair M65 RGB Elite Wired Optical Gaming Mouse - White</p>
+		<h6>₱3,027.12</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/mouse15.jpg">
+		<p>Corsair M65 RGB Elite Wired Optical Gaming Mouse - Black</p>
+		<h6>₱3,027.12</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+</section>
+<section>
+	<div class="item">
+		<img src="products/mouse16.jpg">
+		<p>Razer Naga <br>Pro Wireless <br>Gaming Mouse</p>
+		<h6>₱7,164.88</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/mouse17.jpg">
+		<p>SteelSeries Aerox 3 <br>Wired Gaming <br>Mouse - Black</p>
+		<h6>₱3,027.12</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/mouse18.jpg">
+		<p>SteelSeries Aerox 3 <br>Wireless Gaming Mouse - Black</p>
+		<h6>₱5,045.54</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/mouse19.jpg">
+		<p>Razer Razer Viper Ultimate Wireless Gaming Mouse with Charging Dock</p>
+		<h6>₱6,155.67</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+</section>
+	<Center><h2>Monitors</h2></center>
+	<section>
+		<div class="item">
+			<img src="products/monitor1.jpg">
+			<p>ASUS 27" FHD (1920 x 1080) 75Hz VGA HDMI DP FreeSync LED Monitor</p>
+			<h6>₱8,577.77</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/monitor2.jpg">
+			<p>AOC 24B2XH 23.8" FHD (1920 x 1080) 60Hz HDMI VGA IPS LED Monitor</p>
+			<h6>₱7,568.56</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/monitor3.jpg">
+			<p>Dell 23.8" FHD (1920 x 1080) 75Hz HDMI VGA Flicker-free LED Monitor</p>
+			<h6>₱8,073.17</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/monitor4.jpg">
+			<p>ASUS 24" FHD (1920 x 1080) 144Hz HDMI DP DVI-D 3D Vision Ready</p>
+			<h6>₱8,577.77</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<section>
+	<div class="item">
+		<img src="products/monitor5.jpg">
+		<p>Dell 23.8" FHD (1920 x 1080) 75Hz HDMI DP Antiglare IPS LED Monitor</p>
+		<h6>₱10,091.59</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/monitor6.jpg">
+		<p>TUF Gaming 27in QHD 2560 x 1440 170Hz Free-Sync/G-Sync IPS LED Monitor</p>
+		<h6>₱16,146.84</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/monitor7.jpg">
+		<p>AOC 27B2H 27" FHD (1920 x 1080) 75Hz VGA HDMI IPS LED Monitor</p>
+		<h6>₱10,091.59</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/monitor8.jpg">
+		<p>Acer 27" FHD (1920 x 1080) 165Hz HDMI DP FreeSync VA LED Gaming Monitor</p>
+		<h6>₱9,082.38</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+</section>
+<section>
+	<div class="item">
+		<img src="products/monitor9.jpg">
+		<p>MSI Optix G24C 23.6" Full HD 144Hz FreeSync Curved Gaming LED Monitor</p>
+		<h6>₱8,577.77</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/monitor10.jpg">
+		<p>AOC 23.8" FHD (1920 x 1080) 144Hz HDMI VGA DP FreeSync IPS Frameless</p>
+		<h6>₱9,586.98</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/monitor11.jpg">
+		<p>AOC E2070SWHN 19.5" HD+ (1600 x 900) 60Hz VGA HDMI LED Monitor</p>
+		<h6>₱6,054.75</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/monitor12.jpg">
+		<p>AOC 27" FHD (1920 x 1080) 144Hz HDMI DP VGA FreeSync/ G-Sync Compatible</p>
+		<h6>₱10,596.19</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+</section>
+<section>
+	<div class="item">
+		<img src="products/monitor13.jpg">
+		<p>MSI Optix 27" FHD (1920 x 1080) 165Hz HDMI DP G-Sync Compatible HDR</p>
+		<h6>₱11,605.40</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/monitor14.jpg">
+		<p>MSI Optix G32C4 31.5" FHD (1920 x 1080) 165Hz HDMI DP FreeSync Curved</p>
+		<h6>₱12,110.00</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/monitor15.jpg">
+		<p>Samsung Odyssey G9 49" Dual QHD(5120 x 1440)240Hz HDMI DP FreeSync/ G-Sync</p>
+		<h6>₱50,459.95</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/monitor16.jpg">
+		<p>G5 Odyssey 31.5" WQHD(2560 x 1440)144Hz HDMI DP FreeSync HDR Curved</p>
+		<h6>₱19,174.47</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+</section>
+<section>
+	<div class="item">
+		<img src="products/monitor17.jpg">
+		<p>MSI Optix AG321CQR 31.5" WQHD (2560 x 1440) 165Hz HDMI DP FreeSync Curved</p>
+		<h6>₱16,651.44</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/monitor18.jpg">
+		<p>MSI Optix 29.5" WFHD (2560 x 1080) 200Hz HDMI DP USB-C FreeSync HDR Curved</p>
+		<h6>₱12,614.61</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/monitor19.jpg">
+		<p>ASUS VG27VQ 27" FHD(1920 x 1080) 165Hz HDMI DisplayPort DVI-D Curved</p>
+		<h6>₱13,119.21</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/monitor20.jpg">
+		<p>LG UltraGear 32" WQHD(2560 x 1440) 144Hz DP HDMI 3-Side Virtually Borderless</p>
+		<h6>₱14,128.42</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	</section>
+	<Center><h2>Headphones</h2></center>
+	<section>
+		<div class="item">
+			<img src="products/headset1.jpg">
+			<p>JVC Tinyphones Volume-Limiting Wired Headphones for Kids - Pink/Purple</p>
+			<h6>₱1,008.70</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/headset2.jpg">
+			<p>JLab JBuddies Studio Wireless Bluetooth On-Ear Headphones - Black</p>
+			<h6>₱7,568.56</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/headset3.jpg">
+			<p>Bose 700 Active Noise Canceling Wireless Bluetooth Headphones Silver Luxe</p>
+			<h6>₱19,124.51</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/headset4.jpg">
+			<p>ASUS ROG Strix Go 2.4 Wireless Headphones w/ USB-C 2.4 GHz Adapter</p>
+			<h6>₱10,091.59</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<section>
+	<div class="item">
+		<img src="products/headset5.jpg">
+		<p>Redragon H350 Lamia RGB Wired Gaming Headset w/ 7.1 Surround Sound</p>
+		<h6>₱1,513.31</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/headset6.jpg">
+		<p>Logitech G G935 RGB Wireless LIGHTSYNC Headset w/ 7.1 Surround Sound</p>
+		<h6>₱7,568.56</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/headset7.jpg">
+		<p>Logitech <br>G G332 Stereo Gaming Headset</p>
+		<h6>₱2,219.76</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/headset8.jpg">
+		<p>ASUS ROG Delta S Headset w/ USB-C, Ai Powered Noise-Canceling Microphone</p>
+		<h6>₱9,082.38</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+</section>
+<section>
+	<div class="item">
+		<img src="products/headset9.jpg">
+		<p>Logitech G G733 LIGHTSPEED Wireless RGB Headset w/ Suspension Headband</p>
+		<h6>₱6,559.35</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/headset10.jpg">
+		<p>HyperX Wireless Lightweight Headset w/ Virtual 7.1 Surround Sound</p>
+		<h6>₱4,036.33</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/headset11.jpg">
+		<p>HyperX Cloud II Wireless Gaming Headset w/ 7.1 Surround Sound</p>
+		<h6>₱7,568.56</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/headset12.jpg">
+		<p>HyperX <br>Cloud II Gaming Headset Black-Red</p>
+		<h6>₱5,045.54</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+</section>
+<section>
+	<div class="item">
+		<img src="products/headset13.jpg">
+		<p>Razer <br>BlackShark V2 Pro Wireless Gaming Headset</p>
+		<h6>₱8,325.47</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/headset14.jpg">
+		<p>Razer <br>BLACKSHARK V2 Wired Gaming Headset</p>
+		<h6>₱4,692.32</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/headset15.jpg">
+		<p>SteelSeries Arctis Pro Wireless Gaming Headset w/ X v2.0 Surround Sound</p>
+		<h6>₱16,651.44</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/headset16.jpg">
+		<p>Razer <br>Kraken Wired Gaming Headset</p>
+		<h6>₱3,582.19</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+</section>
+<section>
+	<div class="item">
+		<img src="products/headset17.jpg">
+		<p>SteelSeries Arctis 3 7.1 Surround Sound Gaming Headset White (2019 Edition)</p>
+		<h6>₱3,531.73</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/headset18.jpg">
+		<p>SteelSeries <br>Arctis 1 Wireless Gaming Headset</p>
+		<h6>₱5,045.54</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/headset19.jpg">
+		<p>HyperX Cloud II Wired Gaming Headset w/ 7.1 Virtual surround sound</p>
+		<h6>₱4,440.01</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/headset20.jpg">
+		<p>Logitech G G432 Wired Gaming Headset w/ 7.1 Surround Sound</p>
+		<h6>₱2,673.90</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	</section>
+	<Center><h2>Computer Cases</h2></center>
+	<section>
+		<div class="item">
+			<img src="products/pccase1.jpg">
+			<p>Lian Li Lancool II Mesh Tempered Glass eATX Full Tower Computer Case</p>
+			<h6>₱6,559.35</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/pccase2.jpg">
+			<p>Lian Li PC-O11 Dynamic Tempered Glass ATX Mid-Tower Computer Case</p>
+			<h6>₱10,091.59</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/pccase3.jpg">
+			<p>Corsair 4000D Airflow Tempered Glass ATX Mid-Tower Computer Case - Black</p>
+			<h6>₱5,297.841</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="products/pccase4.jpg">
+			<p>NZXT H510 Tempered Glass ATX Mid-Tower Computer Case - Black</p>
+			<h6>₱3,784.03</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<section>
+	<div class="item">
+		<img src="products/pccase5.jpg">
+		<p>Lian Li Lancool II Tempered Glass eATX Mesh Mid Tower Computer Case - White</p>
+		<h6>₱6,811.66</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/pccase6.jpg">
+		<p>Corsair <br>4000D AF TG MT ATX WHITE</p>
+		<h6>₱5,297.84</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/pccase7.jpg">
+		<p>NZXT H510 Elite Dual-Tempered Glass RGB ATX Mid-Tower Computer Case</p>
+		<h6>₱8,830.07</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/pccase8.jpg">
+		<p>Fractal Design Meshify 2 Clear Tempered Glass ATX Mesh Mid-Tower</p>
+		<h6>₱8,577.77</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+</section>
+<section>
+	<div class="item">
+		<img src="products/pccase9.jpg">
+		<p>Lian Li O11D Mini Tempered Glass ATX Mini Tower Computer Case - Black</p>
+		<h6>₱6,054.75</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/pccase10.jpg">
+		<p>Lian Li LANCOOL 205M Mid-Tower Chassis microATX Computer Case</p>
+		<h6>₱3,531.73</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/pccase11.jpg">
+		<p>Montech X1 Tempered Glass ATX Mid-Tower Computer Case - Black</p>
+		<h6>₱2,875.74</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/pccase12.jpg">
+		<p>NZXT H510 Flow Tempered Glass ATX Mid-Tower Computer Case - White</p>
+		<h6>₱5,045.54</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+</section>
+<section>
+	<div class="item">
+		<img src="products/pccase13.jpg">
+		<p>Lian Li O11 Dynamic XL ROG Tempered Glass eATX Full Tower Computer Case</p>
+		<h6>₱12,614.61</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/pccase14.jpg">
+		<p>ASUS ROG Strix Helios GX601 RGB Tempered Glass Mid-Tower Computer Case</p>
+		<h6>₱17,660.65</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/pccase15.jpg">
+		<p>Cooler Master MASTERBOX MB311L ARGB Tempered Glass mATX Mid-Tower</p>
+		<h6>₱3,784.03</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/pccase16.jpg">
+		<p>Corsair Obsidian 500D RGB SE Tempered Glass Mid-Tower Computer Case</p>
+		<h6>₱14,633.03</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+</section>
+<section>
+	<div class="item">
+		<img src="products/pccase17.jpg">
+		<p>Thermaltake V200 RGB Tempered Glass ATX Mid-Tower Computer Case - Black</p>
+		<h6>₱3,531.73</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/pccase18.jpg">
+		<p>ASUS ROG Strix Helios GX601 RGB Tempered Glass eATX Mid-Tower</p>
+		<h6>₱15,642.23</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/pccase19.jpg">
+		<p>Corsair Crystal Series 680X RGB Tempered Glass ATX Mid-Tower Computer Case</p>
+		<h6>₱14,633.03</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	<div class="item">
+		<img src="products/pccase20.jpg">
+		<p>Thermaltake Core P3 Tempered Glass ATX Mid-Tower Computer Case - Snow</p>
+		<h6>₱8,073.17</h6>
+		<span></span>
+		<button>Add-cart</button>
+	</div>
+	</section>
+<div class="select">
+</body>
+</html>
+<script src="main.js"></script>	
